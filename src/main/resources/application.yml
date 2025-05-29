@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: management
+  servlet:
+    multipart:
+      # 單個文件的最大mb限制
+      max-file-size: 10MB
+      # 單個請求的最大mb限制 (包括請求中的所有文件和表單)
+      max-request-size: 100MB
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL 8 的方言
+    show-sql: true                # 是否印出 SQL（用於開發時除錯）
+    hibernate:
+      ddl-auto: update            # auto 建表方式：update / create / none
+    properties:
+      hibernate:
+        format_sql: true
+
+  # 配置資料庫的連接信息
+  datasource:
+    url: jdbc:mysql://localhost:3306/studydb
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 配置 mybatis 的日誌輸出
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+## 配置日誌輸出 @slf4j
+logging:
+  file:
+    name: logs/app.log
+  level:
+    root: INFO
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+
+
+
+
+
+
+
+
