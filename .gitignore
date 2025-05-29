@@ -1,0 +1,16 @@
+# 忽略 Maven 的編譯產物
+/target/
+
+# 忽略 IntelliJ 的設定資料夾
+.idea/
+*.iml
+
+# 忽略作業系統產生的暫存檔
+.DS_Store
+Thumbs.db
+
+# 忽略 log 檔案
+*.log
+
+# 忽略編譯出來的 class 檔
+*.class
