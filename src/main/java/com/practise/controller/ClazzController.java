@@ -81,6 +81,7 @@ public class ClazzController {
         return Result.success();
     }
 
+    // github測試
 
 }
 
