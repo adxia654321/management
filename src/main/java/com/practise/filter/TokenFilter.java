@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.Request;
 
 @Slf4j
-@WebFilter("/*")
+//@WebFilter("/*")
 public class TokenFilter implements Filter {
 
     @Override
