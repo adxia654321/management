@@ -15,7 +15,7 @@ public class Emp {
     private String name; // 姓名
     private Short gender; // 性别 , 1 男, 2 女
     private String image; // 圖像url
-    private BigDecimal salary; // 薪水
+    private Integer salary; // 薪水
     private Short job; // 職位
     private LocalDate entryDate; // 入職日期
     private Integer deptId; // 部門ID

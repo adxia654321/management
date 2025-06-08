@@ -59,6 +59,9 @@
     <result column="name" property="name"/>
     <result column="gender" property="gender"/>
     <result column="image" property="image"/>
+    <result column="phone" property="phone"/>
+    <result column="salary" property="salary"/>
+    <result column="job" property="job"/>
     <result column="entry_date" property="entryDate"/>
     <result column="dept_id" property="deptId"/>
     <result column="create_time" property="createTime"/>
@@ -87,6 +90,7 @@
   from emp e left join emp_expr ee on e.id = ee.emp_id
   where e.id = #{id}
   </select>
+
 
   <select id="countEmpJobData" resultType="java.util.Map">
     select
