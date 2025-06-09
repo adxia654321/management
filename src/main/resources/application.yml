@@ -38,6 +38,12 @@ logging:
     root: INFO
     org.springframework.jdbc.support.JdbcTransactionManager: debug
 
+## 配置員工上傳大頭貼路徑
+upload:
+  path: C:/Users/NTPU/Desktop/management/img/
+  url-prefix: http://localhost:8080/img/
+
+
 
 
 
