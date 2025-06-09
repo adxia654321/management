@@ -5,7 +5,8 @@
 <mapper namespace="com.practise.mapper.ClazzMapper">
 
   <!--  動態修改班級-->
-  <update id="update">
+  <update id="update" parameterType="com.practise.entity.Clazz">
+    UPDATE clazz
     <set>
       <if test="name != null and name != ''">
         name = #{name},

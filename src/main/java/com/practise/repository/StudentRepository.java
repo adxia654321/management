@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     Integer countByClazzId(Integer id);
+
+
 }

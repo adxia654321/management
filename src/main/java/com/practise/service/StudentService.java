@@ -27,4 +27,7 @@ public interface StudentService {
 
     // 違規處理
     void violationHandle(Integer id, Integer score);
+
+    // 批量刪除員工
+    void deleteByIds(List<Integer> ids);
 }

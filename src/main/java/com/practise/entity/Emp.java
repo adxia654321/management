@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
@@ -21,6 +23,8 @@ public class Emp {
     private Integer deptId; // 部門ID
     private String phone; // 電話
     private LocalDateTime createTime; // 創建時間
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime; // 修改日期
 
     // 封裝部門名稱

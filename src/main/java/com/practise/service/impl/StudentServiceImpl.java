@@ -70,7 +70,14 @@ public class StudentServiceImpl implements StudentService {
     // 根據id 刪除學生
     @Override
     public void deleteById(Integer id) {
+
         studentRepository.deleteById(id);
+    }
+
+    // 批量刪除學生
+    @Override
+    public void deleteByIds(List<Integer> ids) {
+        studentRepository.deleteAllById(ids);
     }
 
     @Override

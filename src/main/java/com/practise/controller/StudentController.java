@@ -89,6 +89,15 @@ public class StudentController {
         return Result.success();
     }
 
+    // 批量刪除員工
+    @DeleteMapping
+    public Result deleteByIds(@RequestParam List<Integer> ids){
+        log.info("批量刪除員工id: " + ids);
+        studentService.deleteByIds(ids);
+
+        return  Result.success();
+    }
+
 
 
 

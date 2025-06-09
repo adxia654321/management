@@ -1,6 +1,7 @@
 package com.practise.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,7 +39,9 @@ public class Clazz {
     @Column(name = "create_time")
     private LocalDateTime createTime; // 創建時間
 
+
     @Column(name = "update_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime; // 修改時間
 
     @Column(name = "master_id")
