@@ -25,7 +25,8 @@ public class OperationLogAspect {
     private OperateLogMapper operateLogMapper;
 
 
-    @Around("@annotation(com.practise.anno.Log)")
+//    @Around("@annotation(com.practise.anno.Log)")
+//    @Around("execution(* com.practise.controller..*(..))")
     public Object logOperation(ProceedingJoinPoint joinPoint) throws Throwable {
 
         // 程式開始時間
@@ -52,7 +53,7 @@ public class OperationLogAspect {
         log.info("紀錄操作日誌: {}", olog);
 
         operateLogMapper.insert(olog);
-
+        
         return  result;
 
     }

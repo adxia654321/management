@@ -33,7 +33,7 @@ public class DeptController {
         return Result.success(deptList);
     }
 
-    @Log
+
     @DeleteMapping("/{id}")
     // 刪除部門
     public Result delete(@PathVariable Integer id) {
@@ -42,7 +42,7 @@ public class DeptController {
         return Result.success();
     }
 
-    @Log
+
     @PostMapping
     // 新增部門
     public Result add(@RequestBody Dept dept) {
@@ -62,7 +62,7 @@ public class DeptController {
     }
 
     // 修改部門
-    @Log
+
     @PutMapping
     public Result update(@RequestBody Dept dept) {
         System.out.println("修改參數 : " + dept);

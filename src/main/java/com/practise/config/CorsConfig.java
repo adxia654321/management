@@ -1,4 +1,4 @@
-package com.practise.controller;
+package com.practise.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
