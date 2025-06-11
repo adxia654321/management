@@ -17,7 +17,7 @@ import org.antlr.v4.runtime.atn.SemanticContext.OR;
 import org.apache.coyote.Request;
 
 @Slf4j
-@WebFilter("/*")
+//@WebFilter("/*")
 public class TokenFilter implements Filter {
 
     @Override
