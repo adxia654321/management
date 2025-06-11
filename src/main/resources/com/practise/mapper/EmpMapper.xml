@@ -94,11 +94,11 @@
 
   <select id="countEmpJobData" resultType="java.util.Map">
     select
-  (case when job=1 then '班主任'
-        when job=2 then '讲师'
-        when job=3 then '学工主管'
-        when job=4 then '教研主管'
-        when job=5 then '咨询师'
+  (case when job=1 then '班導'
+        when job=2 then '講師'
+        when job=3 then '主任'
+        when job=4 then '負責人'
+        when job=5 then '諮詢師'
         else '其他' end) pos,
   count(*) num
 from emp
