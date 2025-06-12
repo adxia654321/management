@@ -17,7 +17,7 @@ import org.antlr.v4.runtime.atn.SemanticContext.OR;
 import org.apache.coyote.Request;
 
 @Slf4j
-//@WebFilter("/*")
+@WebFilter("/*")
 public class TokenFilter implements Filter {
 
     @Override
@@ -31,7 +31,7 @@ public class TokenFilter implements Filter {
         String requestURI = request.getRequestURI();   // uri拿到的不是完整路徑 只有請求路徑 /emp/login
 
         // 2. 是否是登錄的請求, 路徑中包含/login, 就是登入操作, 不驗證, 直接放行
-        if(requestURI.contains("/login") || requestURI.contains("/upload") || requestURI.contains("/img")) {
+        if(requestURI.contains("/login") || requestURI.contains("/img")) {
             log.info("直接放行!");
             filterChain.doFilter(servletRequest, servletResponse);
             return;
