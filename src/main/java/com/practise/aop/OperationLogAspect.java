@@ -1,7 +1,6 @@
 package com.practise.aop;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.Annotated;
 import com.practise.entity.OperateLog;
 import com.practise.mapper.OperateLogMapper;
@@ -79,6 +78,7 @@ public class OperationLogAspect {
         return CurrentHolder.getCurrentId();
     }
 }
+
 
 
 
