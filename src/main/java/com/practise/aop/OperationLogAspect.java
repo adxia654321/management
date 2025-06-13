@@ -1,6 +1,7 @@
 package com.practise.aop;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.Annotated;
 import com.practise.entity.OperateLog;
 import com.practise.mapper.OperateLogMapper;
@@ -25,8 +26,8 @@ public class OperationLogAspect {
     private OperateLogMapper operateLogMapper;
 
 
-//    @Around("@annotation(com.practise.anno.Log)")
-//    @Around("execution(* com.practise.controller..*(..))")
+    //    @Around("@annotation(com.practise.anno.Log)")
+    @Around("execution(* com.practise.controller..*(..))")
     public Object logOperation(ProceedingJoinPoint joinPoint) throws Throwable {
 
         // 程式開始時間
@@ -46,14 +47,29 @@ public class OperationLogAspect {
         olog.setClassName(joinPoint.getTarget().getClass().getName());
         olog.setMethodName(joinPoint.getSignature().getName());
         olog.setMethodParams(Arrays.toString(joinPoint.getArgs()));
-        olog.setReturnValue(result != null ? result.toString() : "void");
+
+        // 這裡只保留 code 和 message
+        String returnValueStr = "void";
+        if (result != null) {
+            try {
+                Method getCode = result.getClass().getMethod("getCode");
+                Method getMessage = result.getClass().getMethod("getMessage");
+                Object code = getCode.invoke(result);
+                Object message = getMessage.invoke(result);
+                returnValueStr = "code: " + code + ", message: " + message;
+            } catch (Exception e) {
+                returnValueStr = "fail to extract code/message: " + e.getMessage();
+            }
+        }
+
+        olog.setReturnValue(returnValueStr);
         olog.setCostTime(costTime);
 
         // 保存日誌
         log.info("紀錄操作日誌: {}", olog);
 
         operateLogMapper.insert(olog);
-        
+
         return  result;
 
     }
@@ -63,6 +79,7 @@ public class OperationLogAspect {
         return CurrentHolder.getCurrentId();
     }
 }
+
 
 
 

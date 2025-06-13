@@ -18,7 +18,7 @@ public interface OperateLogMapper {
     void insert(OperateLog log);
 
     // 查詢日誌
-    @Select("select * from operate_log")
+    @Select("select * from operate_log ORDER BY operate_time DESC")
     List<OperateLog> findAll();
 
 
