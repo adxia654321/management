@@ -105,6 +105,12 @@
 				<artifactId>spring-boot-starter-aop</artifactId>
 			</dependency>
 
+		<!-- spring boot 自帶的 mail 套件 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
 
 
 	</dependencies>
